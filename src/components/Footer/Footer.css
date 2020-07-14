@@ -1,0 +1,31 @@
+.footer {
+  background-color: rgb(192, 192, 192);
+  margin: 0 auto;
+  padding-top: 1em;
+}
+
+.footer ul {
+  padding-inline-start: 0;
+}
+
+.footer ul a {
+  display: block;
+  width: 40%;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  margin: 0 auto;
+  text-transform: uppercase;
+  padding-inline-start: 0;
+  padding: 1.2em 1em;
+  letter-spacing: 0.1em;
+}
+
+.footer ul a:hover {
+    border-bottom: 2px solid #60b0f4;
+  }
+
+.footer .copyright {
+  padding: 1em;
+  text-align: center;
+}

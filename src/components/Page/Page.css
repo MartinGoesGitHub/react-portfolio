@@ -1,0 +1,113 @@
+.featuredMedia {
+  width: 200px;
+  padding-top: 30px;
+  margin: 0 auto;
+  display: block;
+}
+
+.featuredMedia img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.2s;
+}
+
+.featuredMedia img:hover {
+  transform: scale(
+    1.1
+  );
+}
+
+.heading {
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+}
+
+.content p {
+  line-height: 1.7em;
+  text-align: justify;
+}
+
+.content ul {
+  line-height: 1.7em;
+  list-style-type: circle;
+}
+.wp-block-columns {
+  display: flex;
+  justify-content: space-around;
+}
+
+.wp-block-buttons {
+  
+  border: 2px solid #4CAF50;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+}
+
+.wp-block-button__link {
+  color: black;
+  height: auto;
+}
+
+.wp-block-button__link:hover {
+  color: white
+}
+
+.wp-block-buttons:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+.wp-block-button__link {
+  text-decoration: none;
+  height: auto;
+}
+
+::-moz-selection {
+  /* Code for Firefox */
+  background: #d67cff;
+}
+
+::selection {
+  background: #d67cff;
+}
+
+figure {
+  text-align: center;
+}
+
+figure img {
+  width: 100%;
+  height: auto;
+}
+
+figcaption {
+    font-size: .8em;
+    color: gray;
+}
+
+.code {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font-family: Fira Code,Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;
+  border: 1px solid #666;
+  background-color: #2e3440;
+  color: #d8dee9;
+  padding: 2em;
+  font-size: 0.8em;
+}
+
+@media screen and (max-width: 768px) {
+    iframe > div {
+        width: 10% !important;
+    }
+}

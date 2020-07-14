@@ -1,3 +1,52 @@
+In order to let the fetching of the menu items (header and footer) work, you need to add this function to your theme's function.php file.
+
+add_filter('register_post_type_args', function ($args, $post_type) {
+    if ($post_type == 'nav_menu_item' &&
+        class_exists('WP_REST_Posts_Controller') &&
+        !class_exists('WP_REST_NavMenuItem_Controller')) {
+
+        class WP_REST_NavMenuItem_Controller extends WP_REST_Posts_Controller {
+            public function get_items( $request ) {
+                $args = wp_parse_args($request, [
+                    'order' => 'ASC',
+                    'orderby' => 'menu_order',
+                ]);
+
+				$output = [];
+				
+				$locations = get_nav_menu_locations();
+					
+
+            	foreach ( $locations as $location => $id) {
+
+				$menu      = wp_get_nav_menu_object( $id );
+				$items = $menu ? wp_get_nav_menu_items( $menu->term_id ) : [];
+                 // $items = wp_get_nav_menu_items($location, $args);
+                $output["$location"] = $items;
+				}
+
+                return rest_ensure_response(empty($request['location']) ? $output : $output[$request['location']]);
+            }
+
+            public function get_collection_params() {
+                $query_params = parent::get_collection_params();
+                $query_params['menu'] = [
+                    'description' => __( 'primary' ),
+                    'type' => 'string',
+                ];
+                return $query_params;
+            }
+        }
+
+        // Alter the post type arguments
+        $args['show_in_rest'] = true;
+        $args['rest_controller_class'] = 'WP_REST_NavMenuItem_Controller';
+    }
+    return $args;
+}, 10, 2);
+
+Also be aware of the names of the menu's location in the theme you're using. They can differ from theme to theme (eg primary or menu-1 or so on).
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

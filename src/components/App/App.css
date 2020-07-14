@@ -1,5 +1,28 @@
 #root {
+  font-family: Roboto, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.header,
+.page,
+.postList,
+.post {
+  width: 60%;
+  margin: 0 auto;
+  display: flexbox;
+}
+
+.page,
+.postList,
+.post {
+  padding-top: 70px;
+}
+
+@media screen and (max-width: 768px) {
+
+  .header,
+  .page,
+  .postList,
+  .post {
     width: 90%;
-    margin: 0 auto;
-    display: flexbox
+  }
 }

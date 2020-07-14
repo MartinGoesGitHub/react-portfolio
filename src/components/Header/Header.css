@@ -1,0 +1,125 @@
+.header {
+  position: fixed;
+  left: 20%;
+  top: 0;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.808);
+  z-index: 9;
+}
+
+.links {
+  text-align: right;
+  padding-top: 1.2em;
+}
+
+.links a {
+  margin-left: 1.5em;
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+}
+
+.header ul a:hover {
+  border-bottom: 2px solid #60b0f4;
+}
+
+.header a .logo {
+  float: left;
+  height: 40px;
+  padding: 1.5em 1em 0 0.5em;
+}
+
+.header a .logo:hover {
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  transform: scale(1.1);
+}
+
+@media screen and (min-width: 768px) {
+  .header ul.menu {
+    max-height: 20px;
+  }
+  .header a#nav-m,
+  .header a#close {
+    display: none;
+  }
+  .header ul li {
+    margin: 0 30px 0 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /*Formatierung Mobiles Menue*/
+
+  .header{
+    position: static;
+    
+  }
+
+  .header a .logo {
+    padding: 0.2em 1em 0 0.5em;
+  }
+
+  .links {
+    z-index: 1;
+    top: 4.5em;
+    position: absolute;
+    background: #60b0f4;
+    width: 100%;
+    height: 100%;
+    left: -100%;
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    -webkit-transition: all 0.6s ease;
+    -moz-transition: all 0.6s ease;
+    -o-transition: all 0.6s ease;
+    transition: all 0.6s ease;
+  }
+
+  .links a {
+    display: block;
+    text-align: center;
+    letter-spacing: 0.1em;
+    padding: 1.2em 1em;
+    border-bottom: 1px solid #fff;
+    color: white;
+    font-size: 2em;
+    margin-left: 0;
+  }
+
+  .links a:hover {
+    border-bottom: 0;
+  }
+
+  /*Hamburger-Icon*/
+  .header a#nav-m svg,
+  .header a#close svg {
+    width: 40px;
+    height: auto;
+    float: right;
+  }
+
+  .header > #close,
+  .header a#nav-m:target {
+    display: none;
+  }
+
+  .header a:target ~ ul,
+  .header a:target ~ #close {
+    display: inline-block;
+  }
+
+  .header a:target ~ #close {
+    display: block;
+    float: right;
+  }
+
+  .header a:target ~ ul {
+    left: 0;
+  }
+}
