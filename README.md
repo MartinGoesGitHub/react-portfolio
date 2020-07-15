@@ -21,9 +21,9 @@ Because that's just an experimental approach, there are some things you need to 
 ---
 
 ## Screenshots
-![Algorithm schema](./src/images/Home.png)
-![Algorithm schema](./src/images/Portfolio:Footer.png)
-![Algorithm schema](./src/images/Post-Archive.png)
+![Home](./src/screenshots/Home.png)
+![Portfolio:Footer](./src/screenshots/Portfolio:Footer.png)
+![Post-Archive](./src/screenshots/Post-Archive.png)
 
 ---
 
