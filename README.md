@@ -1,3 +1,15 @@
+This is a simple ReactJS Frontend for the Wordpress REST API. This theme is by now just an experimental approach! 
+It fetches the header and footer menu from the API as well as the pages and posts. The posts are displayed first in a post archive. The theme in generall is very simple but somehow playful in the design.
+
+Because that's just an experimental approach, there are some things you need to know:
+- the Logo is by now a hard coded fetch to the belonging image in my local WP
+- the start page has to be named "Home" in order to work, the theme is not fetching for the belonging setting but just for the slug
+- the theme supports some Gutenberg blocks such as images, columns, lists, paragraphs, and headings. If you want to use other blocks you have to add the stylingin order to show them probably
+
+Some Screenshots:
+
+
+
 In order to let the fetching of the menu items (header and footer) work, you need to add this function to your theme's function.php file.
 
 add_filter('register_post_type_args', function ($args, $post_type) {
