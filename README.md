@@ -1,6 +1,36 @@
+## Table of contents
+* [Generell](#generell)
+* [Pitfalls](#pitfalls)
+* [Screenshots](#screenshots)
+* [Extend the WP API via Theme](#extent-the-wp-api-via-theme)
+
+---
+
+## Generell
+This is a simple ReactJS Frontend for the Wordpress REST API. This theme is by now just an experimental approach! 
+It fetches the header and footer menu from the API as well as the pages and posts. The posts are displayed first in a post archive. The theme in generall is very simple but somehow playful in the design.
+
+---
+
+## Pitfalls
+Because that's just an experimental approach, there are some things you need to know:
+- the Logo is by now a hard coded fetch to the belonging image in my local WP
+- the start page has to be named "Home" in order to work, the theme is not fetching for the belonging setting but just for the slug
+- the theme supports some Gutenberg blocks such as images, columns, lists, paragraphs, and headings. If you want to use other blocks you have to add the stylingin order to show them probably
+
+---
+
+## Screenshots
+![Algorithm schema](./src/images/Home.png)
+![Algorithm schema](./src/images/Portfolio:Footer.png)
+![Algorithm schema](./src/images/Post-Archive.png)
+
+---
+
+## Extend the WP API via Theme
 In order to let the fetching of the menu items (header and footer) work, you need to add this function to your theme's function.php file.
 
-add_filter('register_post_type_args', function ($args, $post_type) {
+```add_filter('register_post_type_args', function ($args, $post_type) {
     if ($post_type == 'nav_menu_item' &&
         class_exists('WP_REST_Posts_Controller') &&
         !class_exists('WP_REST_NavMenuItem_Controller')) {
@@ -43,9 +73,11 @@ add_filter('register_post_type_args', function ($args, $post_type) {
         $args['rest_controller_class'] = 'WP_REST_NavMenuItem_Controller';
     }
     return $args;
-}, 10, 2);
+}, 10, 2);```
 
 Also be aware of the names of the menu's location in the theme you're using. They can differ from theme to theme (eg primary or menu-1 or so on).
+
+---
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
