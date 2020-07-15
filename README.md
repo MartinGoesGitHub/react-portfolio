@@ -21,8 +21,11 @@ Because that's just an experimental approach, there are some things you need to 
 ---
 
 ## Screenshots
+
 ![Home](./src/screenshots/Home.png)
+---
 ![Portfolio:Footer](./src/screenshots/Portfolio:Footer.png)
+---
 ![Post-Archive](./src/screenshots/Post-Archive.png)
 
 ---
